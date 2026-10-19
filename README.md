@@ -6,6 +6,15 @@ attribute, for quick SEO review: **dofollow**, **nofollow**, **sponsored** and *
 Runs 100% locally — it only reads the page DOM. No network requests, no tracking,
 no remote code.
 
+## Install
+
+- **Microsoft Edge Add-ons** — [Nofollow Highlighter – SEO link marker](https://microsoftedge.microsoft.com/addons/detail/nofollow-highlighter-%E2%80%93-se/ildcccibmgjclacjdkffhnddnjdddiab)
+- **Chrome Web Store** — pending review
+- **Opera Add-ons** — pending moderation
+- **Firefox (AMO)** — pending publication
+
+Works on Brave and Vivaldi via the Chrome Web Store listing.
+
 ## How links are classified
 
 | Type | `rel` | Color |
