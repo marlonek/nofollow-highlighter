@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>Nofollow Highlighter</title>
+</head>
+<body>
+  <header class="hd">
+    <span class="dot"></span>
+    <h1>Nofollow Highlighter</h1>
+  </header>
+
+  <label class="switch">
+    <span class="sw-txt">
+      <b>Highlighting enabled</b>
+      <small>turn the whole extension on or off</small>
+    </span>
+    <input type="checkbox" id="enabled" class="sw" />
+  </label>
+
+  <label class="switch">
+    <span class="sw-txt">
+      <b>Active on this site</b>
+      <small id="host">—</small>
+    </span>
+    <input type="checkbox" id="site" class="sw" />
+  </label>
+
+  <div id="stats" class="stats" hidden>
+    <span><b id="c-dofollow">0</b> dofollow</span>
+    <span><b id="c-nofollow">0</b> nofollow</span>
+    <span><b id="c-sponsored">0</b> sponsored</span>
+    <span><b id="c-ugc">0</b> ugc</span>
+  </div>
+
+  <div class="group">
+    <div class="group-title">Link types to highlight</div>
+    <label class="chk"><input type="checkbox" id="t-dofollow" /><i style="background:#639922"></i>dofollow</label>
+    <label class="chk"><input type="checkbox" id="t-nofollow" /><i style="background:#E24B4A"></i>nofollow</label>
+    <label class="chk"><input type="checkbox" id="t-sponsored" /><i style="background:#EF9F27"></i>sponsored</label>
+    <label class="chk"><input type="checkbox" id="t-ugc" /><i style="background:#378ADD"></i>ugc</label>
+    <label class="chk solo"><input type="checkbox" id="external" />External links only</label>
+  </div>
+
+  <label class="field">
+    <span>Marking style</span>
+    <select id="style">
+      <option value="underline">Underline (B)</option>
+      <option value="badge">Badge (A)</option>
+      <option value="both">Underline + badge (C)</option>
+    </select>
+  </label>
+
+  <p id="msg" class="msg" hidden></p>
+
+  <footer class="ft">Runs locally · sends no data</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

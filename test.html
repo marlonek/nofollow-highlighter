@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nofollow Highlighter – test page</title>
+  <style>
+    body { font-family: system-ui, "Segoe UI", Roboto, sans-serif; max-width: 760px;
+           margin: 40px auto; padding: 0 20px; line-height: 1.9; color: #1c1c1a; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 16px; margin-top: 28px; }
+    code { background: #f1efe8; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+    .note { background: #f6f5f0; padding: 12px 16px; border-radius: 8px; font-size: 14px; }
+    #add { margin: 8px 0 20px; padding: 8px 12px; font-size: 14px; cursor: pointer; }
+    li { margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>Test page – Nofollow Highlighter</h1>
+  <p class="note">
+    Load the extension in <code>chrome://extensions</code> (Developer mode → "Load unpacked"),
+    enable <b>Allow access to file URLs</b> in its details, then open this file.
+    With highlighting enabled, links are marked automatically. Use the popup to toggle
+    link types and switch styles A / B / C.
+  </p>
+
+  <h2>1. Dofollow (no rel) – expected 🟢 green</h2>
+  <ul>
+    <li><a href="https://example.com/dofollow-1">Plain link without rel</a></li>
+    <li><a href="https://example.com/dofollow-2" rel="noopener noreferrer">rel="noopener noreferrer" (still dofollow for SEO)</a></li>
+  </ul>
+
+  <h2>2. Nofollow – expected 🔴 red</h2>
+  <ul>
+    <li><a href="https://example.com/nf-1" rel="nofollow">rel="nofollow"</a></li>
+    <li><a href="https://example.com/nf-2" rel="nofollow noopener">rel="nofollow noopener"</a></li>
+  </ul>
+
+  <h2>3. Sponsored – expected 🟠 orange</h2>
+  <ul>
+    <li><a href="https://example.com/sp-1" rel="sponsored">rel="sponsored"</a></li>
+  </ul>
+
+  <h2>4. UGC – expected 🔵 blue</h2>
+  <ul>
+    <li><a href="https://example.com/ugc-1" rel="ugc">rel="ugc"</a></li>
+  </ul>
+
+  <h2>5. Mixed (priority: sponsored → ugc → nofollow)</h2>
+  <ul>
+    <li><a href="https://example.com/mix-1" rel="sponsored nofollow">rel="sponsored nofollow" → 🟠 sponsored</a></li>
+    <li><a href="https://example.com/mix-2" rel="ugc nofollow">rel="ugc nofollow" → 🔵 ugc</a></li>
+    <li><a href="https://example.com/mix-3" rel="nofollow ugc sponsored">rel="nofollow ugc sponsored" → 🟠 sponsored</a></li>
+  </ul>
+
+  <h2>6. Internal vs external (hover for the tooltip)</h2>
+  <ul>
+    <li><a href="test.html">Internal link (same domain)</a></li>
+    <li><a href="https://other-domain.example.org/page" rel="nofollow">External nofollow link</a></li>
+  </ul>
+
+  <h2>7. Links that should NOT be marked</h2>
+  <ul>
+    <li><a href="#section">Anchor #section</a></li>
+    <li><a href="mailto:test@example.com">mailto:</a></li>
+    <li><a href="tel:+11234567890">tel:</a></li>
+    <li><a href="javascript:void(0)">javascript:</a></li>
+    <li><a>Link without href</a></li>
+  </ul>
+
+  <h2>8. Dynamic content test (MutationObserver)</h2>
+  <p>New links should also get marked after being added:</p>
+  <button id="add" type="button">Add a dynamic nofollow link</button>
+  <ul id="dyn"></ul>
+
+  <script>
+    let n = 0;
+    document.getElementById("add").addEventListener("click", () => {
+      n++;
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = "https://example.com/dyn-" + n;
+      a.rel = "nofollow";
+      a.textContent = "Dynamic nofollow link #" + n;
+      li.appendChild(a);
+      document.getElementById("dyn").appendChild(li);
+    });
+  </script>
+</body>
+</html>

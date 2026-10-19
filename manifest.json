@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Nofollow Highlighter – SEO link marker",
+  "version": "1.2.0",
+  "description": "Highlights nofollow, sponsored, ugc and dofollow links on any page. An SEO tool that runs locally and sends no data.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "file:///*"],
+      "js": ["src/content.js"],
+      "css": ["src/highlighter.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Nofollow Highlighter",
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

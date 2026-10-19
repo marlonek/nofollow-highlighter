@@ -1,0 +1,49 @@
+/* Nofollow Highlighter - visual layer.
+   Colors are driven by data-nf (link type), the style (underline/badge/both)
+   by data-nf-style on <html>. Only links with .nf-on (an enabled type) show.
+   The content script just tags links; all presentation lives here.
+
+   Per type:
+     --nf-color = saturated color used for the underline
+     --nf-bg / --nf-fg = accessible light background + dark text for the badge */
+
+a.nf-link[data-nf="dofollow"]  { --nf-color: #639922; --nf-bg: #EAF3DE; --nf-fg: #3B6D11; }
+a.nf-link[data-nf="nofollow"]  { --nf-color: #E24B4A; --nf-bg: #FCEBEB; --nf-fg: #A32D2D; }
+a.nf-link[data-nf="sponsored"] { --nf-color: #EF9F27; --nf-bg: #FAEEDA; --nf-fg: #854F0B; }
+a.nf-link[data-nf="ugc"]       { --nf-color: #378ADD; --nf-bg: #E6F1FB; --nf-fg: #0C447C; }
+
+/* --- Style B: underline (default) ---
+   text-decoration underlines text runs cleanly (even multi-line or next to a
+   favicon), unlike border-bottom which can look like a strikethrough on complex
+   links such as Google results. */
+html[data-nf-style="underline"] a.nf-link.nf-on,
+html[data-nf-style="both"] a.nf-link.nf-on {
+  text-decoration-line: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-color: var(--nf-color) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+}
+
+/* --- Style A: badge (no extra DOM, via ::after) ---
+   Light background + dark same-hue text for readable contrast in every color. */
+html[data-nf-style="badge"] a.nf-link.nf-on::after,
+html[data-nf-style="both"] a.nf-link.nf-on::after {
+  content: attr(data-nf);
+  display: inline;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  font-weight: 600 !important;
+  color: var(--nf-fg) !important;
+  background: var(--nf-bg) !important;
+  border: 1px solid var(--nf-color) !important;
+  padding: 1px 4px !important;
+  margin-left: 3px !important;
+  border-radius: 4px !important;
+  vertical-align: middle !important;
+  letter-spacing: 0 !important;
+  white-space: nowrap !important;
+  text-transform: none !important;
+  pointer-events: none;
+}

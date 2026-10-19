@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1400px; height: 560px; overflow: hidden; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #eef2f6; color: #1c1c1a;
+  display: flex; align-items: center; gap: 56px; padding: 0 80px;
+}
+.left { flex: 0 0 560px; }
+.icon { width: 88px; height: 88px; border-radius: 20px; background: #0C447C;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; margin-bottom: 26px; }
+.icon .t { width: 46px; height: 8px; background: #fff; border-radius: 2px; }
+.icon .u { width: 46px; height: 11px; border-radius: 2px;
+  background: linear-gradient(90deg,#639922 0 25%,#E24B4A 25% 50%,#EF9F27 50% 75%,#378ADD 75% 100%); }
+h1 { font-size: 46px; font-weight: 700; letter-spacing: -0.8px; line-height: 1.05; }
+p { font-size: 20px; color: #5f5e5a; margin-top: 16px; line-height: 1.5; }
+.chips { display: flex; gap: 10px; margin-top: 26px; }
+.chip { font-size: 14px; font-weight: 600; padding: 4px 13px; border-radius: 14px; border: 1px solid; }
+.c1 { color:#3B6D11; background:#EAF3DE; border-color:#639922; }
+.c2 { color:#A32D2D; background:#FCEBEB; border-color:#E24B4A; }
+.c3 { color:#854F0B; background:#FAEEDA; border-color:#EF9F27; }
+.c4 { color:#0C447C; background:#E6F1FB; border-color:#378ADD; }
+
+.card { flex: 1; background: #fff; border-radius: 16px; box-shadow: 0 22px 60px rgba(20,30,50,0.18);
+  padding: 34px 38px; }
+.card h2 { font-size: 24px; margin-bottom: 16px; }
+.card p2, .card .line { font-size: 19px; line-height: 2.1; color: #1c1c1a; }
+.line a { color: #1c1c1a; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.ad { text-decoration-color: #639922; } .an { text-decoration-color: #E24B4A; }
+.as { text-decoration-color: #EF9F27; } .au { text-decoration-color: #378ADD; }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="icon"><span class="t"></span><span class="u"></span></div>
+    <h1>Nofollow Highlighter</h1>
+    <p>Instantly see which links are nofollow, sponsored, ugc or dofollow. A fast, private, 100% local SEO tool.</p>
+    <div class="chips">
+      <span class="chip c1">dofollow</span>
+      <span class="chip c2">nofollow</span>
+      <span class="chip c3">sponsored</span>
+      <span class="chip c4">ugc</span>
+    </div>
+  </div>
+  <div class="card">
+    <h2>The best SEO tools in 2026</h2>
+    <div class="line">
+      Start with our <a class="ad">complete checklist</a> and the
+      <a class="ad">official docs</a>. We rely on <a class="as">this analytics suite</a>,
+      an advertising partner. Guides often link to <a class="an">rank trackers</a> and
+      <a class="an">directory listings</a> without passing authority, while reader tips like
+      <a class="au">this comment</a> are user-generated content.
+    </div>
+  </div>
+</body>
+</html>
