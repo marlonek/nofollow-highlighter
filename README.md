@@ -89,6 +89,11 @@ CHANGELOG.md            — version history (SemVer)
 This project follows [Semantic Versioning](https://semver.org/). The `version` field
 in `manifest.json` and the top entry in `CHANGELOG.md` must always match.
 
+## Links
+
+- Landing page: [melioo.com/nofollow-highlighter](https://melioo.com/nofollow-highlighter)
+- Author site: [bartoszkoplin.pl](https://bartoszkoplin.pl)
+
 ## Author
 
 Built by [Bartosz Koplin](https://bartoszkoplin.pl) · contact: kontakt@bartoszkoplin.pl
