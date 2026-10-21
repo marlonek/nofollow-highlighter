@@ -8,8 +8,8 @@ no remote code.
 
 ## Install
 
-- **Microsoft Edge Add-ons** — [Nofollow Highlighter – SEO link marker](https://microsoftedge.microsoft.com/addons/detail/nofollow-highlighter-%E2%80%93-se/ildcccibmgjclacjdkffhnddnjdddiab)
-- **Chrome Web Store** — pending review
+- **Chrome Web Store** — [Nofollow Highlighter – SEO link marker](https://chromewebstore.google.com/detail/nofollow-highlighter-%E2%80%93-se/hhbnomceeblphgehegfloillgmegokgf)
+- **Microsoft Edge Add-ons** — [listing](https://microsoftedge.microsoft.com/addons/detail/nofollow-highlighter-%E2%80%93-se/ildcccibmgjclacjdkffhnddnjdddiab)
 - **Opera Add-ons** — pending moderation
 - **Firefox (AMO)** — pending publication
 
