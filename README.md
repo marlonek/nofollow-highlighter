@@ -10,8 +10,8 @@ no remote code.
 
 - **Chrome Web Store** — [Nofollow Highlighter – SEO link marker](https://chromewebstore.google.com/detail/nofollow-highlighter-%E2%80%93-se/hhbnomceeblphgehegfloillgmegokgf)
 - **Microsoft Edge Add-ons** — [listing](https://microsoftedge.microsoft.com/addons/detail/nofollow-highlighter-%E2%80%93-se/ildcccibmgjclacjdkffhnddnjdddiab)
+- **Firefox (AMO)** — [listing](https://addons.mozilla.org/addon/nofollow-highlighter/)
 - **Opera Add-ons** — pending moderation
-- **Firefox (AMO)** — pending publication
 
 Works on Brave and Vivaldi via the Chrome Web Store listing.
 
